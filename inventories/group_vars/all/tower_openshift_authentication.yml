@@ -1,7 +1,7 @@
-# Ansible Tower Openshift Configurations
+---
 tower_openshift_username: ''
 
 tower_openshift_password: ''
-  
+
 tower_openshift_master_url: ''
 tower_openshift_login: true

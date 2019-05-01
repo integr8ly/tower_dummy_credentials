@@ -2,10 +2,10 @@
 tower_instance_list:
   - ''
 
-<CHANGEME>_tower_host: ''
-<CHANGEME>_tower_verify_ssl: True
-<CHANGEME>_tower_username: ''
-<CHANGEME>_tower_password: ''
+<tower_instance_list>_tower_host: ''
+<tower_instance_list>_tower_verify_ssl: True
+<tower_instance_list>_tower_username: ''
+<tower_instance_list>_tower_password: ''
 
 # Example
 #

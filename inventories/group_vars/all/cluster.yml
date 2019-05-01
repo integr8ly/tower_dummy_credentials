@@ -1,6 +1,7 @@
+---
 cluster_credential_git_user: 'awx'
 cluster_credential_git_user_group: 'awx'
-cluster_credential_git_repo: 'https://github.com/integr8ly/tower_dummy_credentials'
+cluster_credential_git_repo: ''
 cluster_credential_git_ref: 'master'
 
 cluster_pod_openshift_user: ''
@@ -51,3 +52,9 @@ operator_lifecycle_manager_install: false
 g_enable_config_loop: false
 g_enable_monitoring: false
 g_run_config_loop: false
+
+# Backups
+cluster_backup_bucket_name: "integreatly-cert-backups"
+cluster_backup_integreatly_bucket_name: "{{ oo_clusterid }}-integreatly-backups"
+cluster_backup_namespace: openshift-integreatly-backups
+cluster_backup_secret_name: s3-credentials

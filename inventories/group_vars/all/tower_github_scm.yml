@@ -1,6 +1,6 @@
 ---
-tower_credentials_project_scm_type_url: "https://github.com/integr8ly/tower_dummy_credentials"
+tower_credentials_project_scm_type_url: ''
 tower_github_scm_user: ''
 tower_github_scm_password: ''
 
-tower_github_scm: 
+tower_github_scm: ''

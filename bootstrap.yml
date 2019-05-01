@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - include_role:
+        name: credentials
+        tasks_from: bootstrap_credentials.yml

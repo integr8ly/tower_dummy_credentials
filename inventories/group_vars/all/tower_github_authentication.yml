@@ -1,6 +1,7 @@
 ---
 social_auth_github_org_name: ''
 social_auth_github_org_key: ''
+
 social_auth_github_org_secret: ''
   
 social_auth_github_org_organization_map: ''
