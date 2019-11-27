@@ -20,9 +20,9 @@ The projects `CREDENTIAL_CONFIG.yml` file contains a list of variables which nee
 git clone https://github.com/<forked_repository_org>/tower_dummy_credentials
 ```
 
-1. Change the variable values in the `CREDENTIAL_CONFIG.yml` file. A list of all variables that need to be changed along with their usage can be found [HERE](VARIABLES.md).
+2. Change the variable values in the `CREDENTIAL_CONFIG.yml` file. A list of all variables that need to be changed along with their usage can be found [HERE](VARIABLES.md).
 
-2. From the projects root directory, run the `bootstrap.yml` playbook, specifying the path to the `CREDENTIAL_CONFIG.yml` file.
+3. From the projects root directory, run the `bootstrap.yml` playbook, specifying the path to the `CREDENTIAL_CONFIG.yml` file.
 
 ```bash
 ansible-playbook -i ./inventories/hosts bootstrap.yml --extra-vars='@CREDENTIAL_CONFIG.yml'
