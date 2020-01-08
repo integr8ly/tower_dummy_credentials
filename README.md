@@ -12,7 +12,7 @@ The projects `CREDENTIAL_CONFIG.yml` file contains a list of variables which nee
 
 ## Setup
 
-**NOTE**: This project should be forked and made private before proceeding with the following setup steps.
+**NOTE**: This project should be forked before proceeding with the following setup steps. We still recommend the repository to be private even though all the sensitive informaion will be encrypted.
 
 1. Clone this project.
 
@@ -27,6 +27,8 @@ git clone https://github.com/<forked_repository_org>/tower_dummy_credentials
 ```bash
 ansible-playbook -i ./inventories/hosts bootstrap.yml --extra-vars='@CREDENTIAL_CONFIG.yml'
 ```
+
+4. Sensitive information is encrypted now, push to the GitHub (Despite the encryption, we still recommend pushing to the private repository).
 
 ## Adding new variables
 
