@@ -82,15 +82,33 @@ Send Grid credentials to be used to send a notification email if the Compare Pro
 
 ## tower_github_authentication.yml
 
-Ansible [Social Auth](https://docs.ansible.com/ansible-tower/3.0.2/html/administration/social_auth.html) credentials.
+Ansible [Social Auth](https://docs.ansible.com/ansible-tower/3.0.2/html/administration/social_auth.html) credentials. Supports different github auth for different tower instances. The name of each tower instance must be added to the `tower_instance_list`, and the associated credentials also specified with the tower instance name prefixed to each:
+
+```bash
+tower_instance_list:
+  - 'dev'
+  - 'prod'
+  
+dev_social_auth_github_org_name: '<CHANGEME>'
+dev_social_auth_github_org_key: False
+dev_social_auth_github_org_secret: '<CHANGEME>'
+dev_social_auth_github_org_organization_map: '<CHANGEME>'
+dev_social_auth_github_org_team_map: '<CHANGEME>'
+
+prod_social_auth_github_org_name: '<CHANGEME>'
+prod_social_auth_github_org_key: False
+prod_social_auth_github_org_secret: '<CHANGEME>'
+prod_social_auth_github_org_organization_map: '<CHANGEME>'
+prod_social_auth_github_org_team_map: '<CHANGEME>'
+ ```
 
 | Variable | Description | Encrypted |
 | ------ | ----------- | ----------- |
-| `social_auth_github_org_name` | GitHub organizational name |  |
-| `social_auth_github_org_key` | GitHub auth key | ✔ |
-| `social_auth_github_org_secret` | GitHub auth secret | ✔ |
-| `social_auth_github_org_organization_map` | GitHub auth organizational map |  |
-| `social_auth_github_org_team_map` | [Team map](https://docs.ansible.com/ansible-tower/3.0.2/html/administration/social_auth.html#organization-and-team-mapping) variables used to map users to organizations |  |
+| `<tower_instance>_social_auth_github_org_name` | GitHub organizational name |  |
+| `<tower_instance>_social_auth_github_org_key` | GitHub auth key | ✔ |
+| `<tower_instance>_social_auth_github_org_secret` | GitHub auth secret | ✔ |
+| `<tower_instance>_social_auth_github_org_organization_map` | GitHub auth organizational map |  |
+| `<tower_instance>_social_auth_github_org_team_map` | [Team map](https://docs.ansible.com/ansible-tower/3.0.2/html/administration/social_auth.html#organization-and-team-mapping) variables used to map users to organizations |  |
 
 ## tower_github_scm.yml
 
