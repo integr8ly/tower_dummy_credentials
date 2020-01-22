@@ -47,6 +47,7 @@ Configuration variables required by the `provisioning_vars.yml.j2` file to provi
 | `poc_domain` | Domain name to be used for Proof of Concept (POC) environments |  |
 | `htpasswd_username` | Openshift cluster admin username |  |
 | `htpasswd_password` | htpasswd encrypted Openshift cluster admin password | ✔ |
+| `cluster_backup_bucket_name` | Name of cluster backup S3 bucket | |
 
 ## integreatly_vault.yml
 
@@ -64,6 +65,7 @@ Private key to be used with Lets Encrypt. Be sure to use openssl when generating
 | Variable | Description | Encrypted |
 | ------ | ----------- | ----------- |
 | `letsencrypt_private_key` | The user generated private key to be used with Lets Encrypt | ✔ |
+| `cert_email_address` | Email address used for generating letsencrypt certs | |
 
 ## send_grid.yml
 
