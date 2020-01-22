@@ -65,7 +65,7 @@ Private key to be used with Lets Encrypt. Be sure to use openssl when generating
 | Variable | Description | Encrypted |
 | ------ | ----------- | ----------- |
 | `letsencrypt_private_key` | The user generated private key to be used with Lets Encrypt | ✔ |
-| `cert_mail_address` | Email address used for generating letsencrypt certs | |
+| `cert_email_address` | Email address used for generating letsencrypt certs | |
 
 ## send_grid.yml
 
