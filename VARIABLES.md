@@ -134,11 +134,24 @@ dev_tower_host: '<CHANGEME>'
 dev_tower_verify_ssl: False
 dev_tower_username: '<CHANGEME>'
 dev_tower_password: '<CHANGEME>'
+dev_tower_license:
+|
+  {
+    <CHANGE_ME>,
+    "eula_accepted": true
+  }
 
 prod_tower_host: '<CHANGEME>'
 prod_tower_verify_ssl: True
 prod_tower_username: '<CHANGEME>'
 prod_tower_password: '<CHANGEME>'
+prod_tower_license:
+|
+  {
+    <CHANGE_ME>,
+    "eula_accepted": true
+  }
+
  ```
 
 | Variable | Description | Encrypted |
@@ -148,3 +161,4 @@ prod_tower_password: '<CHANGEME>'
 | `<tower_instance>_tower_verify_ssl: <CHANGEME>` | Whether SSL verification is required or not, prefixed with the target tower instance |  |
 | `<tower_instance>_tower_username: <CHANGEME>` | The username of the Target Ansible Tower instance, prefixed with the target tower instance |  |
 | `<tower_instance>_tower_password: <CHANGEME>` | The password of the Target Ansible Tower instance, prefixed with the target tower instance | ✔ |
+| `<tower_instance>_tower_license: {<CHANGE_ME>, "eula_accepted": true  }`  | The license of the Target Ansible Tower instance, prefixed with the target tower instance | ✔ |
