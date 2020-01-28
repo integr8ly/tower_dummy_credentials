@@ -55,7 +55,7 @@ Ansible Tower credentials values.
 
 | Variable | Description | Encrypted |
 | ------ | ----------- | ----------- |
-| `tower_credential_bundle_vault_name` | The name of the tower credential bundle to be used  |
+| `tower_credential_vault_name` | The name of the tower credential bundle to be used  |
 | `integreatly_vault` | The password associated with the tower credentials vault bundle name | ✔ |
 
 ## letsencrypt.yml
