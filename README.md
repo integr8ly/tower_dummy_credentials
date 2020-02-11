@@ -64,7 +64,7 @@ new_variable: !vault
 
 ## Decryption
 
-Encrypted files and variables can be decrypted using the commands below, where the password is the `vault-password` variable value specified in your local copy of the `my_credential_config.yml` file.
+Encrypted files and variables can be decrypted using the commands below, where the password is the `vault-password` variable value specified in your local copy of the `CREDENTIAL_CONFIG.yml` file.
 
 ### Files
 
