@@ -85,7 +85,7 @@ The `bootstrap.yml` playbook can be re-run to update variable values.
 1. Decrypt the `CREDENTIAL_CONFIG.yml` file.
 
 ```bash
-ansible-vault decrypt 'CREDNETIAL_CONFIG.yml'
+ansible-vault decrypt 'CREDENTIAL_CONFIG.yml'
 ```
 
 2. Make the required update/s.
