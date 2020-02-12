@@ -8,7 +8,7 @@ This project serves as the inventory source for the [Ansible Tower Configuration
 
 ## Usage 
 
-The projects `CREDENTIAL_CONFIG.yml` file contains a list of variables which need to be changed to suit your own tower environment. Once these variables have been changed,the `bootstrap.yml` playbook consumes the `CREDENTIAL_CONFIG.yml` file, encrypts any variables containing sensitive information using the supplied Ansible vault password, and then places each of the variables into the relevant group_vars file. The `CREDENTIAL_CONFIG.yml` file itself is then encrypted using the same Ansible vault password.
+The projects `CREDENTIAL_CONFIG_TEMPLATE.yml` file contains a list of variables which need to be changed to suit your own tower environment. Copy the file to `CREDENTIAL_CONFIG.yml` and once these variables have been changed, the `bootstrap.yml` playbook consumes the `CREDENTIAL_CONFIG.yml` file, encrypts any variables containing sensitive information using the supplied Ansible vault password, and then places each of the variables into the relevant group_vars file. The `CREDENTIAL_CONFIG.yml` file itself is then encrypted using the same Ansible vault password.
 
 ## Setup
 
@@ -16,17 +16,16 @@ The projects `CREDENTIAL_CONFIG.yml` file contains a list of variables which nee
 
 1. Clone this project.
 
-```bash
-git clone https://github.com/<forked_repository_org>/tower_dummy_credentials
-```
-
-2. Change the variable values in the `CREDENTIAL_CONFIG.yml` file. A list of all variables that need to be changed along with their usage can be found [HERE](VARIABLES.md).
-
+        git clone https://github.com/<forked_repository_org>/tower_dummy_credentials
+        
+2. Make a copy of the `CREDENTIAL_CONFIG_TEMPLATE.yml` file and set the variables for your tower instance in the copied file. A list of all variables that need to be changed along with their usage can be found [HERE](VARIABLES.md).
+        
+        cp CREDENTIAL_CONFIG_TEMPLATE.yml CREDENTIAL_CONFIG.yml
+        
 3. From the projects root directory, run the `bootstrap.yml` playbook, specifying the path to the `CREDENTIAL_CONFIG.yml` file.
 
-```bash
-ansible-playbook -i ./inventories/hosts bootstrap.yml --extra-vars='@CREDENTIAL_CONFIG.yml'
-```
+        ansible-playbook -i ./inventories/hosts bootstrap.yml --extra-vars='@CREDENTIAL_CONFIG.yml'
+        git add CREDENTIAL_CONFIG.yaml
 
 4. Sensitive information is encrypted now, push to the GitHub (Despite the encryption, we still recommend pushing to the private repository).
 
@@ -54,7 +53,7 @@ new_variable: !vault
 
  ### Plaintext
 
- 1. Add the variable to the  `CREDENTIAL_CONFIG.yml` file with a value of `<CHANGEME>`.
+ 1. Add the variable to the  `CREDENTIAL_CONFIG_TEMPLATE.yml` file with a value of `<CHANGEME>`.
    
  2. Add the new variable to the relevant file template located in `roles/credentials/templates`, ensuring that the variables value is the name of the variable, placed within brackets.
 
