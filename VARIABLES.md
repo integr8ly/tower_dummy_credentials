@@ -180,3 +180,10 @@ prod_tower_license:
 | `<tower_instance>_tower_username: <CHANGEME>` | The username of the Target Ansible Tower instance, prefixed with the target tower instance |  |
 | `<tower_instance>_tower_password: <CHANGEME>` | The password of the Target Ansible Tower instance, prefixed with the target tower instance | ✔ |
 | `<tower_instance>_tower_license: {<CHANGE_ME>, "eula_accepted": true  }`  | The license of the Target Ansible Tower instance, prefixed with the target tower instance | ✔ |
+
+
+## Dummy Variables
+
+| Variable | Description | Encrypted |
+| ------ | ----------- | ----------- |
+| `dummy_release_variable: - "<CHANGEME>"` | Dummy Release Variable |  |
