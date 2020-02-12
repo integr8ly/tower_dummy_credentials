@@ -24,7 +24,7 @@ The projects `CREDENTIAL_CONFIG_TEMPLATE.yml` file contains a list of variables 
         
 3. From the projects root directory, run the `bootstrap.yml` playbook, specifying the path to the `CREDENTIAL_CONFIG.yml` file.
 
-        ansible-playbook -i ./inventories/hosts bootstrap.yml --extra-vars='@CREDENTIAL_CONFIG.yml
+        ansible-playbook -i ./inventories/hosts bootstrap.yml --extra-vars='@CREDENTIAL_CONFIG.yml'
         git add CREDENTIAL_CONFIG.yaml
 
 4. Sensitive information is encrypted now, push to the GitHub (Despite the encryption, we still recommend pushing to the private repository).
