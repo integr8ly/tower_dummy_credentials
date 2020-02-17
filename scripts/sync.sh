@@ -37,12 +37,18 @@ function setup {
   BASE_BRANCH=v$MAJOR_VERSION.$MINOR_VERSION
   git checkout -B ${BASE_BRANCH} ${REMOTE_ORIGIN}/${BASE_BRANCH}
   if [[ $? > 0 ]]
-    then
-      printf "Creating release base branch: ${BASE_BRANCH}\n"
-      git checkout -b ${BASE_BRANCH}
+  then
+    printf "Creating release base branch: ${BASE_BRANCH}\n"
+    git checkout -b ${BASE_BRANCH}
   else
-    printf "ERROR: Branch ${BASE_BRANCH} already exists on remote ${REMOTE_ORIGIN}. Please either remove this branch or specify a different release tag with 'make sync releasetag=<release-tag>'\n"
-    exit 1
+    read -p "Release branch ${REMOTE_ORIGIN}/${BASE_BRANCH} already exists. Are you sure you want to continue (y|n)?"
+    if [[ ! $REPLY =~ ^[Yy]$ ]]
+    then
+      printf "Aborting\n"
+      exit 1
+    fi
+    printf "Release branch ${REMOTE_ORIGIN}/${BASE_BRANCH} exists. Checking out locally..\n"
+    git checkout ${BASE_BRANCH}
   fi
 }
 
