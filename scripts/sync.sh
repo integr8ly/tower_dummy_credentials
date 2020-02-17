@@ -93,7 +93,9 @@ function pushChanges {
 }
 
 function createReleaseTag {
-    printf "Creating release tag ${releasetag} on remote ${REMOTE_ORIGIN}\n"
+    printf "Update release tag ${releasetag} on remote ${REMOTE_ORIGIN}\n"
+    # Removing local reference to releasetag as this will conflict with upstream dummy cred repo release tag
+    git tag -d ${releasetag}
     git tag ${releasetag}
     git push ${REMOTE_ORIGIN} ${releasetag}
 }
