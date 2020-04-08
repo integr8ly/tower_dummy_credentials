@@ -138,6 +138,8 @@ Ansible Tower SSH configuration values.
 | `tower_ssh`  | The SSH key to be copied over to the Ansible tower instance | ✔ |
 | `tower_ssh_become_password`  | sudo password for tower username associated with the tower credentials | ✔ |
 | `tower_ssh_user` | The tower username associated with the tower credentials |  |
+| `tower_ssh_user_password` | The password associated with the tower username | ✔ |
+
 
 ## tower_credentials
 
@@ -180,3 +182,26 @@ prod_tower_license:
 | `<tower_instance>_tower_username: <CHANGEME>` | The username of the Target Ansible Tower instance, prefixed with the target tower instance |  |
 | `<tower_instance>_tower_password: <CHANGEME>` | The password of the Target Ansible Tower instance, prefixed with the target tower instance | ✔ |
 | `<tower_instance>_tower_license: {<CHANGE_ME>, "eula_accepted": true  }`  | The license of the Target Ansible Tower instance, prefixed with the target tower instance | ✔ |
+
+## external_services.yml
+
+External services configuration values.
+
+| Variable | Description | Encrypted |
+| ------ | ----------- | ----------- |
+| `sendgrid_apikey`  | API key for Sendgrid (CS SRE) | ✔ |
+| `pagerduty_apikey`  | API key for Pagerduty (CS SRE) | ✔ |
+| `deadmansnitch_apikey` | API key for DMS (CS SRE) | ✔ |
+| `pingdom_username` | Username for Pingdom (CS SRE) |  |
+| `pingdom_password` | Password for Pingdom (CS SRE) | ✔ |
+| `pingdom_apikey` | API key for Pingdom (CS SRE) | ✔ |
+
+## osd_bastion_ssh.yml
+
+OSD Bastion Host SSH configuration values.
+
+| Variable | Description | Encrypted |
+| ------ | ----------- | ----------- |
+| `osd_bastion_ssh_password`  | sudo password for tower username associated with the tower credentials | ✔ |
+| `osd_bastion_ssh_user`  | The ssh username associated with the Bastion credentials |  |
+| `osd_bastion_ssh` | The SSH key to be used and copied over to the Ansible tower instance for OSD bastion  | ✔ |
