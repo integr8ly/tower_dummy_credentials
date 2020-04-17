@@ -4,6 +4,25 @@ Dummy credentials repository used to generate organisation specific credential r
 
 **NOTE:** This repository serves as the inventory source for the [Ansible Tower Configuration](https://github.com/integr8ly/ansible-tower-configuration) repository.
 
+## Prerequisites
+
+### Reporting changes back
+It is **important** that all teams report their unique changes back to the tower dummy credentials repo.
+The tower dummy credentials repo is the one source of truth.
+
+For new tower jobs or configurations a new JIRA tickets should be created marked with the upcoming or affecting release version.
+This allows for a discussion on changes pre release insuring any changes required in the bootstrapping stage can be incorporated.
+
+A PR should be made against the master branch of the dummy credentials repo.
+In the PR template the following information should be conveyed.
+
+- How to verify the changes made in the PR.
+- A link to any associated JIRA's
+- The checklist should be filled in.
+  - If the [CHANGELOG.md](https://github.com/integr8ly/tower_dummy_credentials/blob/master/CHANGELOG.md) has been updated
+  - If new variables have been added to the [VARIABLES.md](https://github.com/integr8ly/tower_dummy_credentials/blob/master/VARIABLES.md).
+- Any additional information / notes that may help the reviewers understand the reason behind the change and what affects it may have.
+
 ## Getting Started
 
 ### Setup
@@ -65,6 +84,32 @@ The following steps outline the process of adding new variables to the project. 
  2. Add the new variable to the relevant file template located in `roles/credentials/templates`, ensuring that the variables value is the name of the variable, placed within brackets.
 
         new_variable: {{ new_variable }}
+
+### Removing old variables
+
+Removed variables will be documented in the [changelog](CHANGELOG.md) for each release. Review the [changelog](CHANGELOG.md) to ensure that all unwanted variables are removed from the configuration files.
+
+#### Encrypted
+
+1. Remove the variable from the `CREDENTIAL_CONFIG.yml` file.
+
+2. Ensure the variable has been removed from the `bootstrap_credentials.yml` file.
+
+3. Ensure the variable has been removed from all templates.  
+
+4. From the repo's root check for any remaining instances of the variable. This should be an empty return.
+
+        grep -rw <old_variable> *
+
+#### Plaintext
+
+1. Remove the variable from `CREDENTIAL_CONFIG_TEMPLATE.yml` file.
+
+2. Ensure the variable has been removed from all templates. 
+
+3. From the repo's root check for any remaining instances of the variable. This should be an empty return.
+
+        grep -rw <old_variable> *
 
 ### Decryption
 
